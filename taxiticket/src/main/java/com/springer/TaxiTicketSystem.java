@@ -9,8 +9,9 @@ public class TaxiTicketSystem {
         int travellersCount = 2;
 
         TaxiTravelImpl newTaxiTravelImpl = new TaxiTravelImpl();
+        // get distance to travel for particular route
         Integer distance = newTaxiTravelImpl.getDistance(from, to);
-
+        // print ticket
         newTaxiTravelImpl.printTicket(from, to, distance, travellersCount, newTaxiTravelImpl.getTicketPrice(distance, travellersCount));
     }
 }

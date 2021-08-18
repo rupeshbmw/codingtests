@@ -1,17 +1,13 @@
 package com.springer;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class TaxiTravelImpl implements TaxiTravel {
-
-    public static final Map<String, Integer> distances = new HashMap<>();
+public class TaxiTravelImpl extends TaxiTravel {
 
     {
-        distances.put(Constants.Mumbai_Pune, 120);
-        distances.put(Constants.Mumbai_Goa, 350);
-        distances.put(Constants.Mumbai_Nashik, 180);
-        distances.put(Constants.Pune_Nashik, 200);
+        // create routes
+        addRoute(Constants.Mumbai_Pune, 120);
+        addRoute(Constants.Mumbai_Goa, 350);
+        addRoute(Constants.Mumbai_Nashik, 180);
+        addRoute(Constants.Pune_Nashik, 200);
     }
 
     @Override
@@ -24,8 +20,8 @@ public class TaxiTravelImpl implements TaxiTravel {
     }
 
     /*
-    * Calculate ticket price based on distance and travellers count
-    * */
+     * Calculate ticket price based on distance and travellers count
+     * */
     @Override
     public Integer getTicketPrice(Integer distance, Integer travellersCount) {
         int ticketPrice = 0;
@@ -41,8 +37,8 @@ public class TaxiTravelImpl implements TaxiTravel {
     }
 
     /*
-    * Print ticket with all details
-    * */
+     * Print ticket with all details
+     * */
     @Override
     public void printTicket(String from, String to, Integer distance, Integer travellersCount, Integer ticketPrice) {
         System.out.println("Hello Taxi Ticket System");
